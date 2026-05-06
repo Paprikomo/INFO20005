@@ -1,5 +1,124 @@
 .nav-buttons {
-    display:flex;
-    background-color: aqua;
-    text-align: right;
+    display: flex;
+    justify-content: flex-end;
+    background-color: #93A8CB;
+    margin: 0px;
+    padding: 0px;
+    position: sticky;
 }
+
+.nav-buttons h2 {
+    margin-left: 2vw;
+    font-size: 2vw;
+}
+
+.nav-buttons figure {
+    width: 40px;
+    height: 40px;
+    display: flex;
+    justify-content: flex-start;
+    position: relative;
+}
+
+body {
+    margin: 0vw;
+}
+
+header {
+    background-color: #7FB23A;
+    margin-top: 0vw;
+    color: white;
+    display:flex;
+    flex-direction: column;
+}
+
+.title {
+    max-width: 90vw;
+    justify-content: center;
+    align-items: center;
+}
+
+.title h1 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 15vw;
+    width: 90vw;
+    max-height: 10vw;
+    margin-top: 0vw;
+    margin-bottom: 0vw;
+    padding-top: 20vw;
+}
+
+.title h2 {
+    display: flex;
+    font-size: 4vw;
+    justify-content: right;
+    margin-top: 2%;
+}
+
+header h3 {
+    font-size: 3vw;
+    color: black;
+    background-color: #F4CDD4;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    max-width: 25vw;
+    height: 10vh;
+    position: relative;
+    left: 20%;
+}
+
+header p {
+    text-align: center;
+    font-size: 1.5vw;
+    color: white;
+    max-width: 34vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+h2 {
+    text-align: center;
+}
+
+h3 {
+    text-align: center;
+}
+
+.section-one {
+    background-color: #00B8AB;
+    display: flex;
+    flex-direction: column;
+}
+
+.section-one h2 {
+    padding-top: 2vw;
+    color: white;
+    font-size: 3vw;
+}
+
+.section-one div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.section-one p {
+    max-width: 45vw;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #F4CDD4;
+    font-size: 120%;
+    padding: 2vw;
+}
+
+.section-two {
+    background-color: #F4CDD4;
+}
+
+
