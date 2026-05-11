@@ -1,23 +1,82 @@
-.nav-buttons {
+
+@font-face {
+    font-family: Jaro;
+    src: url(fonts/Jaro/Jaro-Regular-VariableFont_opsz.ttf);
+}
+
+@font-face {
+    font-family: Notable;
+    src: url(fonts/Notable/Notable-Regular.ttf);
+}
+
+@font-face {
+    font-family: Hubot sans;
+    src: url(fonts/Hubot_Sans/HubotSans-VariableFont_wdth,wght.ttf);
+}
+
+@font-face {
+    font-family: Gafata;
+    src: url(fonts/Gafata/Gafata-Regular.ttf);
+}
+
+@font-face {
+    font-family: Protest Strike;
+    src: url(fonts/Protest_Strike/ProtestStrike-Regular.ttf);
+}
+
+@font-face {
+    font-family: Inter;
+    src: url(fonts/Inter/Inter-VariableFont_opsz,wght.ttf);
+}
+
+@font-face {
+    font-family: Afacad;
+    src: url(fonts/Afacad/Afacad-VariableFont_wght.ttf);
+}
+
+nav {
     display: flex;
-    justify-content: flex-end;
+    justify-content: space-between;
     background-color: #93A8CB;
     margin: 0px;
     padding: 0px;
     position: sticky;
 }
 
+.nav-buttons {
+    margin-right: 2%;
+}
+
 .nav-buttons h2 {
-    margin-left: 2vw;
+    margin-left: 3vw;
     font-size: 2vw;
 }
 
-.nav-buttons figure {
+.nav-shop {
+    font-family: Jaro;
+    font-size: 150%;
+}
+
+.nav-about {
+    font-family: Inter;
+}
+
+.nav-cart {
+    font-family: Inter;
+}
+
+nav figure {
+    margin: auto 0;
+    margin-left: 2%;
     width: 40px;
-    height: 40px;
+    height: 50px;
     display: flex;
     justify-content: flex-start;
-    position: relative;
+}
+
+.checker {
+    width: 100%;
+    height: auto;
 }
 
 body {
@@ -34,6 +93,7 @@ header {
 
 .title {
     max-width: 90vw;
+    display: block;
     justify-content: center;
     align-items: center;
 }
@@ -52,9 +112,11 @@ header {
 
 .title h2 {
     display: flex;
-    font-size: 4vw;
+    font-size: 6vw;
     justify-content: right;
-    margin-top: 2%;
+    margin-top: 0px;
+    margin-bottom: 2vw;
+    font-family: Jaro;
 }
 
 header h3 {
@@ -68,16 +130,35 @@ header h3 {
     height: 10vh;
     position: relative;
     left: 20%;
+    margin-top: 0vw;
+    margin-bottom: 0vw;
+    font-family: Notable;
 }
 
-header p {
-    text-align: center;
-    font-size: 1.5vw;
-    color: white;
-    max-width: 34vw;
+.description {
     display: flex;
-    justify-content: center;
-    align-items: center;
+    margin-top: 4vw;
+}
+
+.description .block-one {
+    width: 17%;
+    height: 17%;
+}
+
+.block-two {
+    width: 10%;
+    height: 10%
+}
+
+.description p {
+    text-align: left;
+    font-size: 2.5vw;
+    color: white;
+    background-color: #7FB23A;
+    max-width: 34vw;
+    padding: 2.5%;
+    margin-top: 0px;
+    font-family: Afacad;
 }
 
 h2 {
@@ -97,7 +178,8 @@ h3 {
 .section-one h2 {
     padding-top: 2vw;
     color: white;
-    font-size: 3vw;
+    font-size: 5vw;
+    font-family: Protest Strike;
 }
 
 .section-one div {
@@ -113,8 +195,9 @@ h3 {
     justify-content: center;
     align-items: center;
     background-color: #F4CDD4;
-    font-size: 120%;
+    font-size: 150%;
     padding: 2vw;
+    font-family: Hubot Sans;
 }
 
 .section-two {
