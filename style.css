@@ -1,7 +1,15 @@
 
+:root {
+    --green: #7FB23A;
+    --pink: #F4CDD4;
+    --blue: #93A8CB;
+    --teal: #00B8AB;
+    --white: #ffffff;
+}
+
 @font-face {
     font-family: Jaro;
-    src: url(fonts/Jaro/Jaro-Regular-VariableFont_opsz.ttf);
+    src: url(fonts/Jaro/Jaro-Regular.ttf);
 }
 
 @font-face {
@@ -11,7 +19,7 @@
 
 @font-face {
     font-family: Hubot sans;
-    src: url(fonts/Hubot_Sans/HubotSans-VariableFont_wdth,wght.ttf);
+    src: url(fonts/Hubot_Sans/static/HubotSans_Condensed-Light.ttf);
 }
 
 @font-face {
@@ -34,22 +42,76 @@
     src: url(fonts/Afacad/Afacad-VariableFont_wght.ttf);
 }
 
+@font-face {
+    font-family: Mohave;
+    src: url(fonts/Mohave/static/Mohave-Light.ttf);
+}
+
+@font-face {
+    font-family: Patua One;
+    src: url(fonts/Patua_One/PatuaOne-Regular.ttf);
+}
+
+@font-face {
+    font-family: Phetsarath;
+    src: url(fonts/Phetsarath/Phetsarath-Regular.ttf);
+}
+
+@font-face {
+    font-family: Philosopher;
+    src: url(fonts/Philosopher/Philosopher-Regular.ttf);
+}
+
+@font-face {
+    font-family: Poppins;
+    src: url(fonts/Poppins/Poppins-Regular.ttf);
+}
+
+@font-face {
+    font-family: Port Lligat Slab;
+    src: url(fonts/Port_Lligat_Slab/PortLligatSlab-Regular.ttf);
+}
+
+@font-face {
+    font-family: Quintessential;
+    src: url(fonts/Quintessential/Quintessential-Regular.ttf);
+}
+
+@font-face {
+    font-family: Rum Raisin;
+    src: url(fonts/Rum_Raisin/RumRaisin-Regular.ttf);
+}
+
+* {
+    margin: 0;
+}
+
+a {
+    text-decoration: none;
+}
+
+figure {
+    margin: 0;
+}
+
+/* Universal navigation bar */
+
 nav {
     display: flex;
     justify-content: space-between;
-    background-color: #93A8CB;
-    margin: 0px;
-    padding: 0px;
+    background-color: var(--blue);
     position: sticky;
 }
 
 .nav-buttons {
+    display: flex;
+    gap: 3vw;
     margin-right: 2%;
+    align-items: center;
 }
 
-.nav-buttons h2 {
-    margin-left: 3vw;
-    font-size: 2vw;
+.nav-buttons a, a:visited {
+    color: var(--black);
 }
 
 .nav-shop {
@@ -72,107 +134,195 @@ nav figure {
     height: 50px;
     display: flex;
     justify-content: flex-start;
+    padding-bottom: 5px;
 }
 
-.checker {
-    width: 100%;
-    height: auto;
-}
-
-body {
-    margin: 0vw;
-}
+/* title header */
 
 header {
-    background-color: #7FB23A;
+    background-color: var(--green);
     margin-top: 0vw;
     color: white;
-    display:flex;
+    display: flex;
     flex-direction: column;
+    justify-content: center;
+  
+}
+
+.three-blocks {
+    width: 95%;
+    height: auto;
+    position: absolute;
+    margin-inline: auto;
+    left: 50%;
+    transform: translateX(-50%);
+    margin-top: 30px;
+}
+
+.small-logo {
+    width: 10%;
+    height: auto;
+    position: relative;
+    margin-top: 7vw;
+    left: 50%;
+    transform: translateX(-50%);
+
 }
 
 .title {
-    max-width: 90vw;
-    display: block;
-    justify-content: center;
-    align-items: center;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    width: fit-content;
+    margin: 0 auto;
+
 }
 
-.title h1 {
+.logo-title {
     display: flex;
     justify-content: center;
-    align-items: center;
-    font-size: 15vw;
-    width: 90vw;
-    max-height: 10vw;
-    margin-top: 0vw;
-    margin-bottom: 0vw;
-    padding-top: 20vw;
+    flex-wrap: wrap;
+    
+    font-size: clamp(4rem, 20vw, 20rem);    
+    line-height: 1;
+    margin-top: 1rem;
 }
+
+
+/* ============================================================================ */
+/* Title various fonts */
+
+.o-1 {
+    font-family: Patua One;
+}
+
+.t-1 {
+    font-family: Philosopher;
+}
+
+.h-1 {
+    font-family: Port Lligat Slab;
+}
+
+.e-1 {
+    font-family: Phosphate;
+}
+
+.r-1 {
+    font-family: Philosopher;
+}
+
+.s-1 {
+    font-family: Rum Raisin;
+}
+
+.i-1 {
+    font-family: Phetsarath;
+}
+
+.d-1 {
+    font-family: Quintessential;
+}
+
+.e2-1 {
+    font-family: Poppins;
+}
+
+/* ============================================================================ */
+
 
 .title h2 {
     display: flex;
     font-size: 6vw;
     justify-content: right;
-    margin-top: 0px;
-    margin-bottom: 2vw;
+    margin-bottom: 8vw;
     font-family: Jaro;
+
 }
 
-header h3 {
+header a {
     font-size: 3vw;
-    color: black;
-    background-color: #F4CDD4;
+    color: var(--black);
+    background-color: var(--pink);
     display: flex;
-    justify-content: center;
+    position: absolute;
     align-items: center;
+    justify-content: center;
     max-width: 25vw;
-    height: 10vh;
-    position: relative;
-    left: 20%;
-    margin-top: 0vw;
-    margin-bottom: 0vw;
+    height: 12vh;
+    padding-right: 2%;
+    padding-left: 2%;
     font-family: Notable;
+    z-index: 2;
+    top: 80%;
+    left: 26%;
 }
+
+.coffee-products {
+    width: 95%;
+    height: auto;
+    position: absolute;
+    top: 65%;
+    z-index: 1;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.checker-border {
+    width: 100%;
+    height: auto;
+}
+
+/* description */
 
 .description {
     display: flex;
-    margin-top: 4vw;
+    margin-top: 6vw;
+    justify-content: space-between;
+    align-items: center;
 }
 
-.description .block-one {
-    width: 17%;
-    height: 17%;
+.block-one {
+    width: 14%;
+    height: auto;
 }
 
 .block-two {
-    width: 10%;
-    height: 10%
+    width: 8%;
+    height: auto;
 }
 
 .description p {
     text-align: left;
-    font-size: 2.5vw;
+    font-size: 1.9vw;
     color: white;
-    background-color: #7FB23A;
-    max-width: 34vw;
-    padding: 2.5%;
+    background-color: var(--green);
+    max-width: 40vw;
+    padding: 1.5%;
     margin-top: 0px;
     font-family: Afacad;
+    border-radius: 25px;
+    padding-top: 3%;
+    padding-bottom: 3%;
+    padding-right: 6%;
+    padding-left: 6%;
+
 }
 
-h2 {
-    text-align: center;
+.spike-border {
+    width: 100%;
+    height: auto;
+    margin-bottom: 0px;
+    margin-top: 0px;
 }
 
-h3 {
-    text-align: center;
-}
+/* section one */
 
 .section-one {
-    background-color: #00B8AB;
+    background-color: var(--teal);
     display: flex;
     flex-direction: column;
+    margin-top: 4vw;
 }
 
 .section-one h2 {
@@ -180,6 +330,7 @@ h3 {
     color: white;
     font-size: 5vw;
     font-family: Protest Strike;
+    margin-bottom: 0px;
 }
 
 .section-one div {
@@ -188,20 +339,284 @@ h3 {
     align-items: center;
 }
 
-.section-one p {
-    max-width: 45vw;
+.blend-title {
+    display: flex;
+    text-align: center;
+}
+
+.blend-subtitle {
+    text-align: center;
+    gap: 20px;
+}
+
+.blend-title h2 {
+    position:absolute;
+    font-size: 20vw;
+    /*filter: drop-shadow(5px 15px 30px #000000)*/
+}
+
+.title-dot {
+    height: 25px;
+    width: 25px;
+    background-color: var(--white);
+    border-radius: 50%;
+    margin-top: 25px;
+}
+
+.blend-description {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    gap: 2vw;
+}
+
+.box-one {
+    background-color: var(--pink);
+    width: 150px;
+    height: 300px;
+    border-radius: 12px;
+    transform: translateY(-40px);
+
+}
+
+.box-two {
+    background-color: var(--pink);
+    width: 100px;
+    height: 270px;
+    border-radius: 12px;
+    transform: translateY(60px);
+
+}
+
+.box-three {
+    background-color: var(--pink);
+    width: 100px;
+    height: 190px;
+    border-radius: 12px;
+    transform: translateY(-60px);
+}
+
+.box-four {
+    background-color: var(--pink);
+    width: 150px;
+    height: 300px;
+    border-radius: 12px;
+    transform: translateY(-60px);
+}
+
+.blend-description p {
+    max-width: 46vw;
     text-align: center;
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: #F4CDD4;
-    font-size: 150%;
+    
+    font-size: 180%;
     padding: 2vw;
+    padding-left: 6vw;
+    padding-right: 6vw;
+    margin-top: 10px;
+    
     font-family: Hubot Sans;
+    border-radius: 12px;
+    background-color: var(--pink);
+}
+
+.blend-one {
+    left: 7%;
+    transform: rotate(-20deg);
+    top: 223%;
+}
+
+.blend-two {
+    left: 23%;
+    transform: rotate(3deg);
+    top: 210%;
+}
+
+.blend-three {
+    left: 36%;
+    transform: rotate(-10deg);
+    top: 220%;
+}
+
+.blend-four {
+    left: 50%;
+    transform: rotate(5deg);
+    top: 212%;
+}
+
+.blend-five {
+    left: 65%;
+    transform: rotate(3deg);
+    top: 230%;
+}
+
+.blend-six {
+    left: 80%;
+    transform: rotate(-30deg);
+    top: 220%;
+
+}
+
+
+/* Blend image gallery */
+
+.gallery {
+    display: grid;
+    margin-top: 20vw;
+}
+
+.gallery-one {
+    max-width: 200%;
+    height: auto;
+}
+
+.gallery-two {
+    max-width: 200%;
+}
+
+.gallery-three {
+    max-width: 200%;
+}
+
+.gallery-four {
+    max-width: 200%
+}
+
+.gallery-five {
+    max-width: 200%;
+}
+
+.gallery-item {
+    max-width: 5%;
+    height: auto;
+}
+
+.gallery-dot {
+    display: flex;
+    gap: 1vw;
+}
+
+.dot {
+    height: 15px;
+    width: 15px;
+    background-color: var(--white);
+    border-radius: 50%;
+}
+
+.gallery-caption {
+    text-align: center;
+    font-family: Mohave;
+    font-size: 40px;
+    margin-top: 20px;
+    color: var(--black);
+}
+
+.gallery-button {
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    font-family: Notable;
+    background-color: var(--pink);
+    padding: 10px;
+    font-size: 3rem;
+
 }
 
 .section-two {
-    background-color: #F4CDD4;
+    background-color: var(--pink);
+}
+
+.lines-border {
+    width: 100%;
+    height: auto;
+}
+
+.white-spikes-border {
+    width: 100%;
+    height: auto;
+}
+
+
+/* subscription section */
+
+.subscription-title {
+    font-size: 15rem;
+    color: var(--white);
+    font-family: Protest Strike;
+    max-width: 58rem;
+    margin: 0 auto;
+    letter-spacing: -20px;
+    text-align: center;
+    position: relative;
+}
+
+.s-2 {
+    transform: translateY()
+}
+
+.u-2 {
+    transform: translateY(20px);
+}
+
+.b-2 {
+    transform: translateY(20px);
+}
+
+.s2-2 {
+    transform: translateY(20px);
+}
+
+.c-2 {
+    transform: translateY(20px);
+}
+
+.r-2 {
+    transform: translateY(20px);
+}
+
+.i-2 {
+
+}
+
+.p-2 {
+
+}
+
+.t-2 {
+
+}
+
+.i2-2 {
+
+}
+
+.o-2 {
+
+}
+
+.n-2 {
+    
+}
+
+.subscription-desc {
+    background-color: var(--white);
+    display: flex;
+    justify-content: center;
+    max-width: 80%;
+    margin: 0 auto;
+    border-radius: 35px;
+}
+
+.subscription-desc p {
+    font-family: Hubot Sans;
+    font-size: 1.8rem;
+    text-align: center;
+    padding-top: 2%;
+    padding-bottom: 2%;
+    max-width: 50%;
 }
 
 
