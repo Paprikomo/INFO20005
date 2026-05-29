@@ -24,23 +24,23 @@
     </nav>
 
     <header class="product-page-header">
-        <a class="back-button" href="product-list.html">BACK</a>
+        <a class="back-button" href="javascript:history.back()">BACK</a>
     </header>
 
     <main>
-        <div class="back-section">
-        </div>
-
         <section class="product-hero">
-            <figure>
+            <div class="product-left">
                 <img class="product-hero-image" src="images/little_temperance.webp">
-            </figure>
 
-            <div class="product-hero-dot"></div>
+                <div class="product-dots">
+                    <div class="product-hero-dot"></div>
+                    <div class="product-hero-dot"></div>
+                </div>
 
-            <div class="product-hero-dot"></div>
+            </div>
 
-            <div>
+
+            <div class="product-right">
                 <h1>LITTLE TEMPERANCE</h1>
 
                 <div class="product-description">
@@ -76,9 +76,9 @@
 
                     <div class="quantity-pick">
                         <h2>QUANTITY</h2>
-                        <h3 class="minus">-</h3>
-                        <h3 class="quantity">1</h3>
-                        <h3 class="plus">+</h3>
+                        <button class="minus">-</button>
+                        <span class="quantity">1</span>
+                        <button class="plus">+</button>
                     </div>
                 </div>
                 
@@ -90,7 +90,7 @@
                     </div>
 
                     <p>Shipping calculated at checkout.</p>
-                    <h3 class="add-cart-button">ADD TO CART</h3>
+                    <button class="add-cart-button">ADD TO CART</button>
                 </div>
             </div>
 
@@ -101,40 +101,86 @@
         <section class="recommended">
             <h1>MORE LIKE THIS</h1>
 
-            <div>
-                <figure>
-                    <img src="images/single_origin_espresso.webp">
-                </figure>
+            <div class="recommended-gallery">
+                <div class="recommended-product">
+                    <figure>
+                        <img class="recommended-image" src="images/single_origin_espresso.webp">
+                    </figure>
 
-                <figcaption>
-                    <h2>SINGLE ORIGIN</h2>
-                    <h2>MORE INFO</h2>
-                </figcaption>
+                    <figcaption>
+                        <h2>SINGLE ORIGIN</h2>
+                        <a>MORE INFO</a>
+                    </figcaption>
+                </div>
+                
+                <div class="recommended-product">
+                    <figure>
+                        <img class="recommended-image" src="images/swiss_water_decaf.webp">
+                    </figure>
 
+                    <figcaption>
+                        <h2>SWISS WATER DECAF</h2>
+                        <a>MORE INFO</a>
+                    </figcaption>
+
+                </div>
+
+                <div class="recommended-product">
+                    <figure>
+                        <img class="recommended-image" src="images/milky_marvel.webp">
+                    </figure>
+
+                    <figcaption>
+                        <h2>MILKY MARVEL</h2>
+                        <a>MORE INFO</a>
+                    </figcaption>
+
+                </div>
             </div>
             
-            <div>
-                <figure>
-                    <img src="images/swiss_water_decaf.webp">
-                </figure>
-
-                <h2>SINGLE ORIGIN</h2>
-                <h2>MORE INFO</h2>
-            </div>
-
-            <div>
-                <figure>
-                    <img src="images/milky_marvel.webp">
-                </figure>
-                <h2>SINGLE ORIGIN</h2>
-                <h2>MORE INFO</h2>
-            </div>
         </section>
+
+        <img class="footer-lines-border" src="images/footer_lines.png">
 
     </main>
     
     <footer>
-        
+        <div class="footer-row-one">
+            <div class="footer-left">
+                <p>
+                    Shop 3 188 Little Collins St <br>
+                    Melbourne 3000, Victoria
+                </p>
+            </div>
+
+            <div class="footer-center">
+                <figure>
+                    <img class="footer-image" src="images/logo.png">
+                </figure>
+
+                <figcaption>
+                    <p>MADE IN MELBOURNE</p>
+                </figcaption>
+            </div>
+
+            <div class="footer-right">
+                <p>
+                    0425 218 879 <br>
+                    othersidecoffee@gmail.com
+                </p>
+            </div>
+
+        </div>
+
+        <div class="footer-links">
+            <p>INSTAGRAM</p>
+            <p>ACCOUNT</p>
+            <p>CONTACT</p>
+            <p>TERMS</p>
+            <p>LOCATION</p>
+        </div>
+
+        <p class="copyright">© OTHERSIDE Coffee</p>
     </footer>
 </body>
 </html>
