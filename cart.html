@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0&icon_names=delete" />
 </head>
 
-<body>
+<body class="cart-body">
     <nav>
         <figure>
             <a href="index.html">
@@ -17,10 +17,24 @@
         </figure>
         
         <div class="nav-buttons">
-            <a class="nav-shop" href="product-list.html">SHOP</a>
+            <a class="nav-shop" href="product-list.html">
+                <p>SHOP</p>
+            </a>
+
             <h2 class="nav-about">ABOUT</h2>
-            <a class="nav-cart" href="cart.html">CART</a>
+            
+            <div class="cart-wrapper">
+                <a class="nav-cart" href="cart.html">
+                    <p>CART</p>
+                </a>
+
+                <div class="hover-cart">
+                    <p>YOUR CART IS EMPTY</p>
+                    <button id="closeCart">CONTINUE SHOPPING</button>
+                </div>
+            </div>
         </div>
+
     </nav>
   
     <header class="cart-page-header">
@@ -32,7 +46,7 @@
 
     </header>
 
-    <main>
+    <main class="cart-main">
         <img class="spike-border" src="images/white-spike.png"> 
 
         <section class="cart-section">
@@ -74,7 +88,7 @@
                 </div>
 
 
-                <a>CHECKOUT</a>
+                <a href="checkout.html">CHECKOUT</a>
             </div>
             
 
