@@ -5,11 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Otherside Little Temperance</title>
     <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+
 
 </head>
 
 <body>
-    <nav>
+        <nav>
         <figure>
             <a href="index.html">
                 <img class="nav-logo" src="images/logo.png" alt="Logo">
@@ -35,14 +37,15 @@
             </div>
         </div>
 
-        <a class="nav-cart-icon" href="cart.html">
-            <img src="images/cart_icon.png">
-        </a>
+        <div class="mobile-icons">
+            <a class="nav-cart-icon" href="cart.html">
+                <img src="images/cart_icon.png">
+            </a>
 
-        <a class="nav-menu-icon" href="mobile-menu.html">
-            <img src="images/menu_icon.png">
-        </a>
-
+            <a class="nav-menu-icon" href="mobile-menu.html">
+                <img src="images/menu_icon.png">
+            </a>
+        </div>
     </nav>
 
     <header class="product-page-header">
@@ -125,7 +128,7 @@
                     </div>
 
                     <p>Shipping calculated at checkout.</p>
-                    <button class="add-cart-button">ADD TO CART</button>
+                    <button id="add-cart" class="add-cart-button">ADD TO CART</button>
                 </div>
             </div>
 

@@ -40,6 +40,15 @@ closeCart.addEventListener("click", () => {
 
 
 
+const addCart = document.getElementById("add-cart");
+
+addCart.addEventListener("click", () => {
+    addCart.textContent = "ADDED TO CART"
+    addCart.style.backgroundColor = "#7FB23A";
+})
+
+
+
 
 
 
