@@ -111,11 +111,11 @@ button {
 /* Universal navigation bar */
 
 nav {
+    position: relative;
     display: flex;
     justify-content: space-between;
     background-color: var(--blue);
-    z-index: 2;
-    
+    z-index: 3;
 }
 
 .nav-buttons {
@@ -663,7 +663,7 @@ header {
 .subscription-box-one {
     width: 90%;
     position: absolute;
-    top: 345%;
+    transform: translateY(10%);
     left: 5%;
     z-index: 1;
 }
@@ -672,11 +672,11 @@ header {
     width: 90%;
     position: absolute;
     left: 7%;
-    top: 390%;    
+    transform: translateY(60%);
 }
 
 .subscription-title {
-    font-size: clamp(7rem, 20vw, 15rem);
+    font-size: clamp(5.3rem, 15vw, 15rem);
     color: var(--white);
     font-family: Protest Strike;
     max-width: 58rem;
@@ -685,16 +685,13 @@ header {
     margin-bottom: 0px;
     z-index: 2;
     position: relative;
+    transform: translateX(6%);
 
 }
 
 .subscription-title span {
     display: inline-block;
     margin-top: 20px;
-}
-
-.s-2 {
-
 }
 
 .u-2 {
@@ -745,6 +742,14 @@ header {
     transform: translateX(60px);
 }
 
+.mobile-subscription-box-one {
+    display: none;
+}
+
+.mobile-subscription-box-two {
+    display: none;
+}
+
 .subscription-desc {
     background-color: var(--white);
     display: flex;
@@ -774,21 +779,28 @@ header {
     display: flex;
 }
 
-.subscription-subtitle-one {
+.subscription-left h2 {
     color: var(--teal);
     font-family: Protest Strike;
-    font-size: clamp(2rem, 10vw, 4rem);
+    font-size: clamp(2rem, 5vw, 4rem);
     margin-top: 2rem;
 }
 
-.subscription-explanation-one {
+.subscription-left p {
     background-color: var(--white);
     font-family: Hubot Sans;
-    font-size: clamp(1rem, 3vw, 1.5rem);
+    font-size: clamp(0.9rem, 3vw, 1.5rem);
     border-radius: 15px;
     width: 80%;
     padding: 15px;
+}
 
+.mobile-subscription-lines-left {
+    display: none;
+}
+
+.mobile-subscription-lines-right {
+    display: none;
 }
 
 .subscription-right {
@@ -800,14 +812,14 @@ header {
 .subscription-right h2 {
     color: var(--teal);
     font-family: Protest Strike;
-    font-size: clamp(1rem, 10vw, 4rem);
+    font-size: clamp(2rem, 5vw, 4rem);
     margin-top: 2rem;
 }
 
 .subscription-right p {
     background-color: var(--white);
     font-family: Hubot Sans;
-    font-size: clamp(1rem, 3vw, 1.5rem);
+    font-size: clamp(0.9rem, 3vw, 1.5rem);
     border-radius: 15px;
     padding: 15px;
 }
@@ -820,7 +832,6 @@ header {
 
 .triple-lines-one {
     position: absolute;
-    top: 50%;
 }
 
 .white-spikes-border {
@@ -991,6 +1002,7 @@ footer {
     left: 50%;
     transform: translateX(-50%);
     top: 50px;
+    z-index: 1;
 }
 
 .category {
@@ -1598,16 +1610,6 @@ footer {
         display: none;
     }
 
-    .subscription-desc {
-        max-width: 80%;
-        margin: 0 auto;
-        border-radius: 15px;
-    }
-
-    .subscription-desc p {
-        max-width: 85%;
-    }
-
     .bar {
         display: none!important;    }
 
@@ -1713,6 +1715,86 @@ footer {
         display: none!important;
     }
 
+    .subscription-title {
+        letter-spacing: -8px;
+        max-width: 20rem;
+        height: 13rem;
+        transform: translateX(0px);
+
+    }
+
+    .u-2 {
+        transform: translateY(12px);
+    }
+
+    .b-2 {
+        transform: translateY(0px);
+    }
+
+    .s2-2 {
+        transform: translateY(-10px);
+    }
+
+    .c-2 {
+        transform: translateY(5px);
+    }
+
+    .r-2 {
+        transform: translateY(-10px);
+    }
+
+    .i-2 {
+        transform: translateY(-50px);
+    }
+
+    .p-2 {
+        transform: translateY(-40px);
+    }
+
+    .t-2 {
+        transform: translateY(-50px);
+    }
+
+    .i2-2 {
+        transform: translateY(-60px);
+    }
+
+    .o-2 {
+        transform: translateY(-50px);
+    }
+
+    .n-2 {
+        transform: translateY(-40px);
+    }
+
+    .bottom-row {
+        transform: translateX(20px);
+    }
+
+    .mobile-subscription-box-one {
+        display: block;
+        position: absolute;
+        left: 7%;
+        transform: translateY(-130%);
+    }
+
+    .mobile-subscription-box-two {
+        display: block;
+        position: absolute;
+        right: 7%;
+        transform: translateY(-130%);
+
+    }
+
+    .subscription-desc {
+        max-width: 80%;
+        margin: 0 auto;
+        border-radius: 15px;
+    }
+
+    .subscription-desc p {
+        max-width: 85%;
+    }
     .subscription-box-one {
         display: none;
     }
@@ -1721,9 +1803,67 @@ footer {
         display: none;
     }
 
-    .bottom-row {
-        transform: none;
+    .subscription-explanation {
+        flex-direction: column;
+        gap: 10px;
     }
+
+    .subscription-left {
+        background-color: var(--white);
+        margin-top: 20px;
+        border-radius: 5px;
+        padding:10px;
+        width: 220px;
+        z-index: 2
+    }
+
+    .subscription-left p {
+        padding: 0px;
+    }
+
+    .small-bar {
+        display: none;
+    }
+
+    .mobile-subscription-lines-left {
+        display: block;
+        position: absolute;
+        z-index: 1;
+        transform: translateY(80%);
+        left: 15%;
+    }
+
+    .subscription-right {
+        background-color: var(--white);
+        margin-top: 5px;
+        border-radius: 5px;
+        padding:10px;
+        width: 220px;
+        align-items: flex-end;
+        align-self: flex-end;
+        z-index: 2;
+    }
+
+    .mobile-subscription-lines-right {
+        display: block;
+        position: absolute;
+        z-index: 1;
+        transform: translateY(20%);
+        right: 15%;
+    }
+
+    .subscription-left h2 {
+        margin-top: 0px;
+    }
+
+    .subscription-right p {
+        padding: 0px;
+    }
+
+    .subscription-right h2 {
+        margin-top: 0px;
+    }
+
 
 
     .section-three-title {
