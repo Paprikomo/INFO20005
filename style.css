@@ -43,7 +43,7 @@
 
 @font-face {
     font-family: Mohave;
-    src: url(fonts/Mohave/static/Mohave-Light.ttf);
+    src: url(fonts/Mohave/Mohave-Bold.ttf);
 }
 
 @font-face {
@@ -114,7 +114,6 @@ nav {
     display: flex;
     justify-content: space-between;
     background-color: var(--blue);
-    position: sticky;
     z-index: 2;
     
 }
@@ -213,12 +212,19 @@ nav {
 }
 
 
+.mobile-icons {
+    display: none;
+}
 
 .nav-cart-icon {
     display: none;
 }
 
 .nav-menu-icon {
+    display: none;
+}
+
+.exit-icon {
     display: none;
 }
 
@@ -1507,7 +1513,7 @@ footer {
     
     /* ============================================================================ */
     /* media nav */
-    .nav {
+    nav {
         gap: 0px;
     }
 
@@ -1523,20 +1529,31 @@ footer {
         display: none;
     }
 
+    .mobile-icons {
+        display: flex;
+        gap: 15px;
+        align-items: center;
+    }
     .nav-cart-icon {
-        display: block;
-        width: 6%;
-        height: 6%;
-        margin-top: 13px;
-        transform: translateX(30px);
+        display: flex;
     }
 
     .nav-menu-icon {
-        display: block;
-        width: 5%;
-        height: 5%;
-        margin-right: 15px;
-        margin-top: 15px;
+        display: flex;
+
+    }
+
+    .nav-cart-icon img {
+        max-width: 40%;
+        max-height: 40%;
+        transform: translateX(70px);
+    }
+
+    .nav-menu-icon img {
+        max-width: 35%;
+        max-height: 35%;
+        transform: translateX(35px);
+
     }
 
 
@@ -1593,6 +1610,10 @@ footer {
 
     .bar {
         display: none!important;    }
+
+    .blend-title {
+            overflow: hidden;
+    }
 
     .blend-title h2 {
         top: 52%;
@@ -1698,6 +1719,10 @@ footer {
 
     .subscription-box-two {
         display: none;
+    }
+
+    .bottom-row {
+        transform: none;
     }
 
 
@@ -1950,4 +1975,54 @@ footer {
     }
 
 
+    /* ============================================================================ */
+    /* unique mobile menu */
+
+    .mobile-menu-body {
+        background-color: var(--pink);
+    }
+
+    .mobile-menu-body nav {
+        background-color: var(--pink);
+    }
+
+
+    .exit-icon {
+        display: block;
+
+    }
+
+    .exit-icon img {
+        max-width: 45%;
+        max-height: 45%;
+        margin-top: 10px;
+        transform: translateX(87px);
+    }
+
+    .mobile-menu-top {
+        text-align: center;
+        margin-top: 50%;
+    }
+
+    .mobile-menu-top a {
+        font-family: Mohave;
+        font-size: 30px;
+        color: var(--teal);
+    }
+
+    .mobile-menu-top h2 {
+        font-family: Mohave;
+        font-size: 30px;
+        color: var(--teal);
+    }
+    
+    .mobile-menu-bottom {
+        text-align: center;
+        margin-top: 50%;
+    }
+
+    .mobile-menu-bottom p {
+        font-family: Hubot Sans;
+        color: var(--teal);
+    };
 }
