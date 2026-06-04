@@ -109,6 +109,16 @@ button {
     cursor: pointer;
 }
 
+input {
+    border: none;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
 /* ==================================================================== */
 /* Universal navigation bar */
 
@@ -149,7 +159,7 @@ nav {
 }
 
 .nav-cart {
-    font-family: Inter;
+    font-family: Poppins;
     padding: 25px;
 }
 
@@ -1249,6 +1259,8 @@ footer {
     height: 40px;
     border-radius: 20px;
     font-family: Hubot Sans;
+    font-size: 20px;
+    text-align: center;
 }
 
 .plus {
