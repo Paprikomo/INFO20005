@@ -10,7 +10,7 @@ closeCart.addEventListener("click", () => {
 
 cartBtn.addEventListener("mouseenter", () => {
     hoverCart.style.display = 'block';
-    renderHoverCart;
+    renderHoverCart();
 })
 
 cartBtn.addEventListener("mouseleave", () => {
@@ -38,26 +38,72 @@ if (addCart) {
         addCart.style.backgroundColor = "#7FB23A";
         //console.log("Adding", quantity, "items to cart");
 
-        const cartItem = {
-            id: "one",
-            name: "LITTLE TEMPERANCE",
-            price: 18,
-            quantity: quantity,
-            size: selectedSize,
-            grind: selectedGrind,
-            image: "images/little_temperance.webp"
-        };
+        const productContainer = document.getElementById("productContainer");
 
-        localStorage.setItem("cart", JSON.stringify(cartItem));
+        if (productContainer) {
+
+            const productId = productContainer.dataset.productId;
+
+            let productInfo;
+
+            if (productId === "one") {
+                productInfo = {
+                    id: "one",
+                    name: "LITTLE TEMPERANCE",
+                    price: 18,
+                    image: "images/little_temperance.webp"
+                };
+            }
+
+            if (productId === "two") {
+                productInfo = {
+                    id: "two",
+                    name: "SWISS WATER DECAF",
+                    price: 18,
+                    image: "images/swiss_water_decaf.webp"
+                };
+            }
+                
+            const cartItem = {
+                ...productInfo,
+                quantity,
+                size: selectedSize,
+                grind: selectedGrind
+            };
+
+            let cart = getCart();
+
+            const existing = cart.find(
+                item => item.id === cartItem.id
+            );
+
+            if (existing) {
+                existing.quantity += cartItem.quantity;
+            } else {
+                cart.push(cartItem);
+            }
+
+            localStorage.setItem(
+                "cart",
+                JSON.stringify(cart)
+            );
+        }
     })
 }
-
 
 
 //===================================================================================
 
 function getCart() {
-    return JSON.parse(localStorage.getItem("cart"));
+    const data = JSON.parse(localStorage.getItem("cart"));
+
+    if (!data) return [];
+
+    if (!Array.isArray(data)) {
+        return [data];
+    }
+
+    return data;
 }
 
 //===================================================================================
@@ -70,102 +116,128 @@ if(cartContainer) {
 
 function renderCart() {
 
-    const cart = getCart();
+    const cartItems = getCart();
 
 
-    if (!cart) {
+    if (cartItems.length === 0) {
         cartContainer.innerHTML = `
             <h2 class="empty-cart">YOUR CART IS EMPTY</h2>
             <a class="cart-continue" href="product-list.html">CONTINUE SHOPPING</a>
         `
-    } else {
-        const total = cart.price * cart.quantity
+        return;
+    }
 
-        cartContainer.innerHTML = `
+    let total = 0
+
+    cartContainer.innerHTML = cartItems.map(item => {
+        
+        total += item.price * item.quantity
+
+        return `
             <div class="cart-row">
 
                 <div class="cart-row-info">
-                    <img class="cart-image" src="images/little_temperance.webp">
+                    <img class="cart-image" src="${item.image}">
 
                     <div class="cart-row-middle">
-                        <h2>${cart.name}</h2>
+                        <h2>${item.name}</h2>
                         
-                        <p>$${cart.price.toFixed(2)}<br>
-                            Size: ${cart.size}<br>
-                            Grind: ${cart.grind}
+                        <p>$${item.price.toFixed(2)}<br>
+                            Size: ${item.size}<br>
+                            Grind: ${item.grind}
                         </p>
 
                         <div class="cart-quantity-pick">
-                            <button class="product-one-minus">-</button>
-                            <input class="product-one-quantity" type="number" value="${cart.quantity}" min="1">
-                            <button class="product-one-plus">+</button>
+                            <button class="product-one-minus" data-id="${item.id}">-</button>
+                            <input class="product-one-quantity" 
+                            data-id="${item.id}"
+                            type="number" 
+                            value="${item.quantity}" 
+                            min="1">
+                            <button class="product-one-plus" data-id="${item.id}">+</button>
                         </div>
                     </div>
                 </div>
 
                 <div class="cart-row-right">
-                    <button class="cart-remove">
+                    <button class="cart-remove" data-id="${item.id}">
                         <img class="cart-trash" src="images/trash_icon.png">
                     </button>
                     
-                    <p>$${cart.price.toFixed(2)}</p>
+                    <p>$${(item.price * item.quantity).toFixed(2)}</p>
                 </div>
             </div>
+        `;
+    }).join("");
 
-            <div class="cart-checkout">
-                <div class="cart-price">
-                    <p>Subtotal</p>
-                    <p>$${total.toFixed(2)}</p>
-                </div>
-
-                <a href="checkout.html">CHECKOUT</a>
+    cartContainer.innerHTML += `
+        <div class="cart-checkout">
+            <div class="cart-price">
+                <p>Subtotal</p>
+                <p>$${total.toFixed(2)}</p>
             </div>
-        `
-    }
 
+            <a href="checkout.html">CHECKOUT</a>
+        </div>
+    `
 
-
-
-    const cartRemove = cartContainer.querySelector(".cart-remove");
-
-    if (cartRemove) {
-        cartRemove.addEventListener("click", () => {
-            localStorage.removeItem("cart");
-            renderCart();
-        })
-    }
-
-    //----------------------------------------------------------------
-
-    const minusBtn = cartContainer.querySelector(".product-one-minus")
-    const plusBtn = cartContainer.querySelector(".product-one-plus")
-    const quantityOne = cartContainer.querySelector(".product-one-quantity")
-
-
-    if (plusBtn) {
-        plusBtn.addEventListener("click", () => {
-            setQuantity(cart.quantity + 1);
-        })
-    }
-
-
-    if (minusBtn) {
-        minusBtn.addEventListener("click", () => {
-            setQuantity(cart.quantity - 1);
-        })
-    }
-
-    if (quantityOne) {
-        quantityOne.addEventListener("change", () => {
-            setQuantity(parseInt(quantityOne.value));
-        })
-    }
-
-
-    //----------------------------------------------------------------
     
+    //----------------------------------------------------------------
+
+    cartContainer.querySelectorAll(".cart-remove").forEach(btn => {
+        btn.addEventListener("click", () => {
+
+            const id = btn.dataset.id;
+
+            let cart = getCart();
+
+            cart = cart.filter(item => item.id !== id);
+
+            localStorage.setItem("cart", JSON.stringify(cart));
+
+            renderCart();
+            renderHoverCart();
+        });
+    });
+
+
+    //----------------------------------------------------------------
+
+    cartContainer.querySelectorAll(".product-one-minus").forEach(btn => {
+        btn.addEventListener("click", () => {
+
+            const id = btn.dataset.id;
+
+            const item = getCart().find(item => item.id === id);
+
+            setQuantity(id, -1); 
+        })
+    });
+
+    cartContainer.querySelectorAll(".product-one-plus").forEach(btn => {
+        btn.addEventListener("click", () => {
+
+            const id = btn.dataset.id;
+
+            const item = getCart().find(item => item.id === id);
+
+            setQuantity(id, +1); 
+        })
+    });
+
+    cartContainer.querySelectorAll(".product-one-quantity").forEach(input => {
+        input.addEventListener("change", () => {
+
+            const id = input.dataset.id;
+
+            setQuantity(id, parseInt(input.value));
+        });
+    });
+
 }
 
+//------------------------------------------------------------------------------------------
+//Hover Cart
 
 const emptyText = document.getElementById("emptyText");
 const hoverContainer = document.getElementById("hoverContainer");
@@ -176,9 +248,9 @@ hoverCart.addEventListener("mouseenter", () => {
 })
 
 function renderHoverCart() {
-    const cart = getCart();
+    const cartItems = getCart();
 
-    if (!cart) {
+    if (cartItems.length === 0) {
         hoverContainer.innerHTML = "";
 
         emptyText.style.display = "block";
@@ -195,85 +267,116 @@ function renderHoverCart() {
         closeCart.style.display = "none";
     }
 
-    hoverContainer.innerHTML = `
+    hoverContainer.innerHTML = cartItems.map(item => `
         <div class="hover-item">
-            <img class="hover-container-image-one" src="images/little_temperance.webp">
-        
+            <img class="hover-container-image-one" src="${item.image}">
+
             <div class="hover-cart-info">
-                <h2>LITTLE TEMPERANCE</h2>
+                <h2>${item.name}</h2>
+
                 <p>
-                    Size: ${cart.size}<br>
-                    Grind: ${cart.grind}
+                    Size: ${item.size}<br>
+                    Grind: ${item.grind}
                 </p>
-        
+
                 <div class="hover-cart-quantity-pick">
-                    <button class="product-one-minus">-</button>
-                    <input class="product-one-quantity" type="number" value="${cart.quantity}" min="1">
-                    <button class="product-one-plus">+</button>
+                    <button class="product-one-minus" data-id="${item.id}">-</button>
+                    <input class="product-one-quantity"
+                        data-id="${item.id}"
+                        type="number"
+                        value="${item.quantity}"
+                        min="1">
+                    <button class="product-one-plus" data-id="${item.id}">+</button>
                 </div>
             </div>
 
             <div class="hover-cart-right">
-                <button class="cart-remove">
+                <button class="cart-remove" data-id="${item.id}">
                     <img class="hover-cart-trash" src="images/trash_icon.png">
                 </button>
-                
-                <p>$${cart.price.toFixed(2)}</p>
+
+                <p>$${(item.price * item.quantity).toFixed(2)}</p>
             </div>
         </div>
-            
+    `).join("");
+
+    hoverContainer.innerHTML += `
         <a class="hover-cart-checkout" href="cart.html">GO TO CART</a>
     `
 
-    const hoverRemove = hoverContainer.querySelector(".cart-remove");
 
-    if (hoverRemove) {
-        hoverRemove.addEventListener("click", () => {
-            localStorage.removeItem("cart");
+    hoverContainer.onclick = (e) => {
+        const btn = e.target.closest(".cart-remove");
+        if (!btn) return;
 
-            renderHoverCart();
-            renderCart();
+        const id = btn.dataset.id;
+
+        let cart = getCart();
+        cart = cart.filter(item => item.id !== id);
+
+        localStorage.setItem("cart", JSON.stringify(cart));
+
+        renderHoverCart();
+        renderCart();
+    };
+
+    hoverContainer.querySelectorAll(".product-one-plus").forEach(btn => {
+        btn.addEventListener("click", () => {
+            const id = btn.dataset.id;
+            setQuantity(id, 1);
         });
-    }
+    });
 
-    const minusBtn = hoverContainer.querySelector(".product-one-minus")
-    const plusBtn = hoverContainer.querySelector(".product-one-plus")
-    const quantityOne = hoverContainer.querySelector(".product-one-quantity")
+    hoverContainer.querySelectorAll(".product-one-minus").forEach(btn => {
+        btn.addEventListener("click", () => {
+            const id = btn.dataset.id;
+            setQuantity(id, -1);
+        });
+    });
 
+    hoverContainer.querySelectorAll(".product-one-quantity").forEach(input => {
+        input.addEventListener("change", () => {
+            const id = input.dataset.id;
+            const value = parseInt(input.value);
 
-    if (plusBtn) {
-        plusBtn.addEventListener("click", () => {
-            setQuantity(newQuantity + 1);
-        })
-    }
-
-
-    if (minusBtn) {
-        minusBtn.addEventListener("click", () => {
-            setQuantity(newQuantity - 1);
-        })
-    }
-
-    if (quantityOne) {
-        quantityOne.addEventListener("change", () => {
-            setQuantity(parseInt(quantityOne.value));
-        })
-    }
+            setQuantityAbsolute(id, value);
+        });
+    });
 }
 
 
-//Helper function for universal quantity input type
+//Helper function for universal quantity
 
-function setQuantity(newQuantity) {
-    const cart = getCart();
+function setQuantity(id, delta) {
+    let cart = getCart();
 
-    cart.quantity = Math.max(1, newQuantity);
-    
+    const item = cart.find(p => p.id === id);
+    if (!item) return;
+
+    item.quantity = Math.max(1, item.quantity + delta);
+
     localStorage.setItem("cart", JSON.stringify(cart));
 
     renderCart();
     renderHoverCart();
 }
+
+//Helper function for universal quantity input using typing
+
+function setQuantityAbsolute(id, value) {
+    let cart = getCart();
+
+    const item = cart.find(p => p.id === id);
+    if (!item) return;
+
+    item.quantity = Math.max(1, value);
+
+    localStorage.setItem("cart", JSON.stringify(cart));
+
+    renderCart();
+    renderHoverCart();
+}
+
 
 
 const productContainer = document.getElementById("productContainer");
@@ -300,12 +403,6 @@ if (productContainer) {
             }
         })
     }
-}
-
-const selections = document.querySelector(".selections");
-
-if (selections) {
-
 }
 
 

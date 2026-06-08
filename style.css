@@ -1,3 +1,4 @@
+/* Standardized colours across entire page */
 :root {
     --green: #7FB23A;
     --pink: #F4CDD4;
@@ -5,6 +6,8 @@
     --teal: #00B8AB;
     --white: #ffffff;
 }
+
+/* Fonts used across site */
 
 @font-face {
     font-family: Jaro;
@@ -45,6 +48,8 @@
     font-family: Mohave;
     src: url(fonts/Mohave/Mohave-Bold.ttf);
 }
+
+/* Fonts used primarily for homepage title text */
 
 @font-face {
     font-family: Patua One;
@@ -91,6 +96,8 @@
     src: url(fonts/Koulen/Koulen-Regular.ttf);
 }
 
+
+/* Resetting attributes of universal fields */
 * {
     margin: 0;
 }
@@ -118,6 +125,18 @@ input::-webkit-inner-spin-button {
   -webkit-appearance: none;
   margin: 0;
 }
+
+
+/* Adding cursor hover interaction */
+
+button:hover {
+    background-color: var(--blue);
+}
+
+a:not(.product-box):hover {
+    background-color: var(--blue);
+}
+
 
 /* ==================================================================== */
 /* Universal navigation bar */
@@ -222,6 +241,7 @@ nav {
     margin-right: 0px;
     background-color: var(--white);
     border-radius: 15px;
+    margin-bottom: 10px;
 }
 
 .hover-container-image-one {
@@ -1311,6 +1331,10 @@ footer {
     text-align: center;
     font-family: Hubot Sans;
     cursor: pointer;
+}
+
+.pick label:hover {
+    background-color: var(--blue);
 }
 
 input[type="radio"] {
