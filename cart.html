@@ -9,7 +9,7 @@
 </head>
 
 <body class="cart-body">
-        <nav>
+    <nav>
         <figure>
             <a href="index.html">
                 <img class="nav-logo" src="images/logo.png" alt="Logo">
@@ -23,14 +23,17 @@
 
             <h2 class="nav-about">ABOUT</h2>
             
-            <div class="cart-wrapper">
+            <div class="cart-wrapper" id="cartBtn">
                 <a class="nav-cart" href="cart.html">
                     <p>CART</p>
                 </a>
 
-                <div class="hover-cart">
-                    <p>YOUR CART IS EMPTY</p>
-                    <button id="closeCart">CONTINUE SHOPPING</button>
+                <div class="hover-cart" id="hoverCart">
+                    <div class="hover-container" id="hoverContainer"></div>
+
+                    
+                    <p id="emptyText" class="empty-text">YOUR CART IS EMPTY</p>
+                    <button id="closeCart" class="close-cart">CONTINUE SHOPPING</button>
                 </div>
             </div>
         </div>
@@ -60,51 +63,7 @@
 
         <section class="cart-section">
 
-            <!--
-            <div class="cart-row">
-
-                <div class="cart-row-info">
-                    <img class="cart-image" src="images/little_temperance.webp">
-
-                    <div class="cart-row-middle">
-                        <h2>LITTLE TEMPERANCE</h2>
-                        
-                        <p>$18.00<br>
-                            Size: 1KG<br>
-                            Grind: Espresso
-                        </p>
-
-                        <div class="cart-quantity-pick">
-                            <button>-</button>
-                            <span>1</span>
-                            <button>+</button>
-                        </div>
-                    </div>
-
-
-                </div>
-
-                <div class="cart-row-right">
-                        <!--trash can
-                    <p>$18.00</p>
-                </div>
-
-            </div>
-            -->
-
             <div id="cartContainer"></div>
-
-            <div class="cart-checkout">
-                <div class="cart-price">
-                    <p>Subtotal</p>
-                    <p>$36.00</p>
-                </div>
-
-
-                <a href="checkout.html">CHECKOUT</a>
-            </div>
-            
-
 
         </section>
 
@@ -150,5 +109,8 @@
 
         <p class="copyright">© OTHERSIDE Coffee</p>
     </footer>
+
+    <script src=".//script.js" defer></script>
+
 </body>
 </html>

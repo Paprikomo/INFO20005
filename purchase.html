@@ -8,7 +8,7 @@
 
 </head>
 <body>
-        <nav>
+    <nav>
         <figure>
             <a href="index.html">
                 <img class="nav-logo" src="images/logo.png" alt="Logo">
@@ -22,14 +22,17 @@
 
             <h2 class="nav-about">ABOUT</h2>
             
-            <div class="cart-wrapper">
+            <div class="cart-wrapper" id="cartBtn">
                 <a class="nav-cart" href="cart.html">
                     <p>CART</p>
                 </a>
 
-                <div class="hover-cart">
-                    <p>YOUR CART IS EMPTY</p>
-                    <button id="closeCart">CONTINUE SHOPPING</button>
+                <div class="hover-cart" id="hoverCart">
+                    <div class="hover-container" id="hoverContainer"></div>
+
+                    
+                    <p id="emptyText" class="empty-text">YOUR CART IS EMPTY</p>
+                    <button id="closeCart" class="close-cart">CONTINUE SHOPPING</button>
                 </div>
             </div>
         </div>
