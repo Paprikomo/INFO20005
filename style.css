@@ -1302,13 +1302,23 @@ footer {
     font-size: 30px;
 }
 
-.pick p {
+.pick label {
     background-color: var(--pink);
     border-radius: 25px;
-    padding: 10px;
+    padding: 8px;
     font-size: clamp(0.8rem, 1.2vw, 1.4rem);
     min-width: 40px;
     text-align: center;
+    font-family: Hubot Sans;
+    cursor: pointer;
+}
+
+input[type="radio"] {
+    display: none;
+}
+
+label:has(input[type="radio"]:checked) {
+    background-color: var(--green);
 }
 
 .selections {

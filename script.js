@@ -25,8 +25,15 @@ let quantity = 1
 
 const addCart = document.getElementById("add-cart");
 
+const productOneSize = document.querySelectorAll('input[name="product-one-size"]');
+const productOneGrind = document.querySelectorAll('input[name="product-one-grind"]');
+
 if (addCart) {
     addCart.addEventListener("click", () => {
+        
+        const selectedGrind = document.querySelector('input[name="product-one-grind"]:checked')?.value;
+        const selectedSize = document.querySelector('input[name="product-one-size"]:checked')?.value;
+
         addCart.textContent = "ADDED TO CART"
         addCart.style.backgroundColor = "#7FB23A";
         //console.log("Adding", quantity, "items to cart");
@@ -36,8 +43,8 @@ if (addCart) {
             name: "LITTLE TEMPERANCE",
             price: 18,
             quantity: quantity,
-            size: "1KG",
-            grind: "Espresso",
+            size: selectedSize,
+            grind: selectedGrind,
             image: "images/little_temperance.webp"
         };
 
@@ -137,14 +144,20 @@ function renderCart() {
 
     if (plusBtn) {
         plusBtn.addEventListener("click", () => {
-            increaseQuantity();
+            setQuantity(cart.quantity + 1);
         })
     }
 
 
     if (minusBtn) {
         minusBtn.addEventListener("click", () => {
-            decreaseQuantity();
+            setQuantity(cart.quantity - 1);
+        })
+    }
+
+    if (quantityOne) {
+        quantityOne.addEventListener("change", () => {
+            setQuantity(parseInt(quantityOne.value));
         })
     }
 
@@ -189,8 +202,8 @@ function renderHoverCart() {
             <div class="hover-cart-info">
                 <h2>LITTLE TEMPERANCE</h2>
                 <p>
-                    Size: 1KG<br>
-                    Grind: Espresso
+                    Size: ${cart.size}<br>
+                    Grind: ${cart.grind}
                 </p>
         
                 <div class="hover-cart-quantity-pick">
@@ -205,7 +218,7 @@ function renderHoverCart() {
                     <img class="hover-cart-trash" src="images/trash_icon.png">
                 </button>
                 
-                <p>$18.00</p>
+                <p>$${cart.price.toFixed(2)}</p>
             </div>
         </div>
             
@@ -230,45 +243,24 @@ function renderHoverCart() {
 
     if (plusBtn) {
         plusBtn.addEventListener("click", () => {
-            increaseQuantity();
+            setQuantity(newQuantity + 1);
         })
     }
 
 
     if (minusBtn) {
         minusBtn.addEventListener("click", () => {
-            decreaseQuantity();
+            setQuantity(newQuantity - 1);
+        })
+    }
+
+    if (quantityOne) {
+        quantityOne.addEventListener("change", () => {
+            setQuantity(parseInt(quantityOne.value));
         })
     }
 }
 
-
-//Helper function for universal quantity plus
-
-function increaseQuantity() {
-    const cart = getCart();
-    cart.quantity++;
-
-    localStorage.setItem("cart", JSON.stringify(cart));
-
-    renderCart();
-    renderHoverCart();
-}
-
-//Helper function for universal quantity minus
-
-function decreaseQuantity() {
-    const cart = getCart();
-
-    if (cart.quantity > 1) {
-        cart.quantity--;
-
-        localStorage.setItem("cart", JSON.stringify(cart));
-
-        renderCart();
-        renderHoverCart();
-    }
-}
 
 //Helper function for universal quantity input type
 
@@ -310,5 +302,10 @@ if (productContainer) {
     }
 }
 
+const selections = document.querySelector(".selections");
+
+if (selections) {
+
+}
 
 
