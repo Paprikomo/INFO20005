@@ -115,7 +115,6 @@ if(cartContainer) {
 }
 
 function renderCart() {
-
     const cartItems = getCart();
 
 
@@ -406,3 +405,69 @@ if (productContainer) {
 }
 
 
+
+const summaryContainer = document.getElementById("summaryContainer");
+
+if (summaryContainer) {
+    renderSummary();
+}
+
+function renderSummary() {
+    const cartItems = getCart();
+
+    if (cartItems.length === 0) {
+        summaryContainer.innerHTML = `
+            <h2 class="empty-cart">YOUR CART IS EMPTY</h2>
+            <a class="cart-continue" href="product-list.html">CONTINUE SHOPPING</a>
+        `
+        return;
+    }  
+                   
+    summaryContainer.innerHTML = cartItems.map(item => {
+
+        return `
+            <div class="summary-row">
+                <div class="summary-row-info">
+                    <img class="summary-image" src="${item.image}">
+
+                    <div class="summary-row-middle">
+                        <h2>${item.name}</h2>
+                        
+                        <p>${item.quantity}<br>
+                            Size: ${item.size}<br>
+                            Grind: ${item.grind}
+                        </p>
+                    </div>
+                </div>
+
+                <div class="summary-row-right">
+                    <button class="summary-remove" data-id="${item.id}">
+                        <img class="summary-trash" src="images/trash_icon.png">
+                    </button>
+                    
+                    <p>$${(item.price * item.quantity).toFixed(2)}</p>
+                </div>
+            </div>
+        `
+    }).join("");
+
+    //summaryContainer.innerHTML += `
+        //<a href="purchase.html">PURCHASE</a>
+    //`
+
+    
+    summaryContainer.querySelectorAll(".summary-remove").forEach(btn => {
+        btn.addEventListener("click", () => {
+
+            const id = btn.dataset.id;
+
+            let cart = getCart();
+            cart = cart.filter(item => item.id !== id);
+
+            localStorage.setItem("cart", JSON.stringify(cart));
+
+            renderSummary();
+        });
+    });
+
+}

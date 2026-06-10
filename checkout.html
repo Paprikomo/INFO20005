@@ -11,7 +11,7 @@
     <nav>
         <figure>
             <a href="index.html">
-                <img class="nav-logo" src="images/logo.png" alt="Logo">
+                <img class="nav-logo" src="images/logo.avif" alt="Logo">
             </a>
         </figure>
         
@@ -61,7 +61,7 @@
         <img class="spike-border" src="images/white-spike.png"> 
 
         <div class="checkout-section">
-            <span div="checkout-info">
+            <div div="checkout-info">
                 <div class="checkout-row">
                     <form>
                         <label for="email">EMAIL</label><br>
@@ -71,7 +71,7 @@
                         <input type="checkbox" id="check" name="check">
                     </form>
 
-                    <h2>CONTINUE</h2>
+                    <p>CONTINUE</p>
                 </div>
                 
                 <div class="checkout-row">
@@ -82,19 +82,39 @@
                     <h2>PAYMENT</h2>
                 </div>
 
-                <div>
-
+                <div class="checkout-row">
+                    <h2>REVIEW & PURCHASE</h2>
                 </div>
-            </span>
+            </div>
 
             <aside class="checkout-summary">
                 <h2>ORDER SUMMARY</h2>
 
-                <div class="summary-section">
-                    
-                </div>
+                <div class="summary-section" id="summaryContainer">
 
-                <a href="purchase.html">PURCHASE</a>
+
+
+
+                </div>
+                
+                <div class="purchase-section">
+                        <div class="puprchase-left">
+                            <p>Subtotal</p>
+                            <p>Tax</p>
+                            <p>Shipping</p>
+                            <h3>TOTAL</h3>
+                        </div>
+
+                        <div class="puprchase-right">
+                            <p>$</p>
+                            <p>$</p>
+                            <p>$</p>
+                            <h3>$</h3>
+                        </div>
+                    
+                        <a href="purchase.html">PURCHASE</a>
+
+                </div>
             </aside>
         </div>
         
@@ -142,5 +162,7 @@
         <p class="copyright">© OTHERSIDE Coffee</p>
     </footer>
     
+    <script src=".//script.js" defer></script>
+
 </body>
 </html>
