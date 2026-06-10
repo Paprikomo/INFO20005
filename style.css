@@ -5,6 +5,7 @@
     --blue: #93A8CB;
     --teal: #00B8AB;
     --white: #ffffff;
+    --blac: #000000;
 }
 
 /* Fonts used across site */
@@ -20,7 +21,7 @@
 }
 
 @font-face {
-    font-family: Hubot sans;
+    font-family: Hubot Sans;
     src: url(fonts/Hubot_Sans/static/HubotSans_Condensed-Light.ttf);
 }
 
@@ -186,7 +187,7 @@ nav {
     margin: auto 0;
     margin-left: 2%;
     width: 50%;
-    height: auto;
+    
     display: flex;
     justify-content: flex-start;
     margin: 10px;
@@ -194,8 +195,6 @@ nav {
 
 .cart-wrapper {
     position: relative;
-    background-color: var(pink);
-
 }
 
 .hover-cart {
@@ -246,7 +245,7 @@ nav {
 
 .hover-container-image-one {
     width: 30%;
-    height: auto;
+    
     background-color: var(--green);
     border-radius: 15px 0 15px 0;
     margin-right: 10px;
@@ -268,10 +267,6 @@ nav {
     font-family: Hubot Sans;
     font-size: clamp(1rem, 10vw, 1.2rem);
     text-align: left;
-}
-
-.hover-cart-quantity-pick {
-    display: flex;
 }
 
 .hover-cart-right {
@@ -300,7 +295,7 @@ nav {
 
 .hover-cart-trash {
     width: 100%;
-    height: auto;
+    
 }
 
 
@@ -330,7 +325,7 @@ nav {
     background-color: var(--white);
     border-radius: 30px;
     width: 80px;
-    height: auto;
+    
     text-align: center;
     align-items: center;
     justify-content: center;
@@ -375,7 +370,7 @@ header {
 
 .three-blocks {
     width: 95%;
-    height: auto;
+    
     position: absolute;
     margin-inline: auto;
     left: 50%;
@@ -385,7 +380,7 @@ header {
 
 .small-logo {
     width: 10%;
-    height: auto;
+    
     position: relative;
     margin-top: 7vw;
     left: 50%;
@@ -486,7 +481,7 @@ header {
 
 .coffee-products {
     width: 95%;
-    height: auto;
+    
     position: absolute;
     top: 65%;
     z-index: 1;
@@ -496,7 +491,7 @@ header {
 
 .checker-border {
     width: 100%;
-    height: auto;
+    
 }
 
 /* description */
@@ -510,12 +505,12 @@ header {
 
 .block-one {
     width: 14%;
-    height: auto;
+    
 }
 
 .block-two {
     width: 8%;
-    height: auto;
+    
 }
 
 .description p {
@@ -524,22 +519,14 @@ header {
     color: white;
     background-color: var(--green);
     max-width: 40vw;
-    padding: 1.5%;
     margin-top: 0px;
     font-family: Afacad;
     border-radius: 25px;
-    padding-top: 3%;
-    padding-bottom: 3%;
-    padding-right: 6%;
-    padding-left: 6%;
-
+    padding: 3% 6%;
 }
 
 .spike-border {
     width: 100%;
-    height: auto;
-    margin-bottom: 0px;
-    margin-top: 0px;
 }
 
 /* section one */
@@ -556,7 +543,6 @@ header {
     color: white;
     font-size: 5vw;
     font-family: Protest Strike;
-    margin-bottom: 0px;
 }
 
 .section-one div {
@@ -629,12 +615,8 @@ header {
     text-align: center;
     
     font-size: clamp(0.8rem, 1.5vw, 180%);
-    padding: 2vw;
-    padding-left: 6vw;
-    padding-right: 6vw;
+    padding: 4vw 6vw;
     margin-top: 10px;
-    padding-top: 4vw;
-    padding-bottom: 4vw;
     
     font-family: Hubot Sans;
     border-radius: 12px;
@@ -704,31 +686,31 @@ header {
 
 .gallery-one {
     width: 60%;
-    height: auto;
+    
     z-index: 2
 }
 
 .gallery-two {
     width: 80%;
-    height: auto;
+    
     z-index: 2
 }
 
 .gallery-three {
     width: 100%;
-    height: auto;
+    
     z-index: 2
 }
 
 .gallery-four {
     width: 80%;
-    height: auto;
+    
     z-index: 2
 }
 
 .gallery-five {
     width: 60%;
-    height: auto;
+    
     z-index: 2;
 }
 
@@ -775,13 +757,13 @@ header {
 
 .gallery-move-buttons img {
     width: 5%;
-    height: auto;
+    
     margin: 20px;
 }
 
 .lines-border {
     width: 100%;
-    height: auto;
+    
 }
 
 
@@ -814,7 +796,6 @@ header {
     max-width: 58rem;
     margin: 0 auto;
     letter-spacing: -20px;
-    margin-bottom: 0px;
     z-index: 2;
     position: relative;
     transform: translateX(6%);
@@ -828,10 +809,6 @@ header {
 
 .u-2 {
     transform: translateY(40px);
-}
-
-.b-2 {
-    transform: translateY(0px);
 }
 
 .s2-2 {
@@ -994,7 +971,7 @@ header {
 
 .white-spikes-border {
     width: 100%;
-    height: auto;
+    
 }
 
 /* find us at section */
@@ -1023,7 +1000,7 @@ header {
 .balls-left {
     position: absolute;
     width: 10%;
-    height: auto;
+    
     left: 50px;
     transform: translateY(-18%);
 }
@@ -1031,7 +1008,7 @@ header {
 .balls-right {
     position: absolute;
     width: 10%;
-    height: auto;
+    
     right: 13%;
     transform: translateY(90px);
 }
@@ -1059,14 +1036,14 @@ header {
 
 .footer-lines-border {
     width: 100%;
-    height: auto;
+    
     margin-top: 50px;
 }
 
 footer {
     background-color: var(--blue);
     font-family: Hubot Sans;
-    font-size: (0.1rem, 10vw, 1rem);
+    font-size: clamp(0.1rem, 10vw, 1rem);
 }
 
 .footer-row-one {
@@ -1084,7 +1061,7 @@ footer {
 
 .footer-center img {
     width: clamp(200px, 1vw, 300px);
-    height: auto;
+    
 }
 
 .footer-center figcaption {
@@ -1094,7 +1071,7 @@ footer {
 
 .footer-image {
     width: 20%;
-    height: auto;
+    
     align-items: center;
 }
 
@@ -1155,12 +1132,10 @@ footer {
 .shop-header-image {
     position: absolute;
     width: 50%;
-    height: auto;
     z-index: 1;
     left: 50%;
     transform: translateX(-50%);
     top: 50px;
-    z-index: 1;
 }
 
 .category {
@@ -1199,7 +1174,6 @@ footer {
 }
 
 .products {
-    margin: 0 auto;
     margin: 100px;
     display: grid;
     grid-template-columns: repeat(3, 1fr); 
@@ -1225,7 +1199,7 @@ footer {
 
 .product-image {
     width: 100%;
-    height: auto;
+    
     background-color: var(--green);
     border-radius: 20px;
     margin-top: 30px;
@@ -1298,7 +1272,7 @@ footer {
 
 .product-hero img {
     width: 70%;
-    height: auto;
+    
     margin: 0 auto;
 }
 
@@ -1454,7 +1428,7 @@ label:has(input[type="radio"]:checked) {
 
 .recommended-image {
     width: 100%;
-    height: auto;
+    
 }
 
 .recommended-product h2 {
@@ -1533,7 +1507,7 @@ label:has(input[type="radio"]:checked) {
 
 .cart-image {
     width: 20%;
-    height: auto;
+    
 }
 
 .cart-row-info {
@@ -1576,7 +1550,7 @@ label:has(input[type="radio"]:checked) {
     background-color: var(--white);
     border-radius: 30px;
     width: 100px;
-    height: auto;
+    
     text-align: center;
     align-items: center;
     justify-content: center;
@@ -1616,7 +1590,7 @@ label:has(input[type="radio"]:checked) {
 
 .cart-trash {
     width: 100%;
-    height: auto;
+    
 }
 
 .cart-checkout {
@@ -1643,7 +1617,7 @@ label:has(input[type="radio"]:checked) {
     text-align: center;
     background-color: var(--green);
     width: 400px;
-    height: auto;
+    
     border-radius: 15px;
     padding-left: 20px;
     padding-right: 20px;
@@ -1787,7 +1761,7 @@ label:has(input[type="radio"]:checked) {
 
 .summary-trash {
     width: 100%;
-    height: auto;
+    
 }
 
 .purchase-section {
@@ -2025,36 +1999,36 @@ label:has(input[type="radio"]:checked) {
 
     .gallery {
         width: 100%;
-        height: auto;
+        
         gap: 10px;
         margin: 0px;
     }
 
     .gallery-one {
         width: 80%;
-        height: auto;
+        
     }
 
     .gallery-two {
         width: 100%;
-        height: auto;
+        
     }
 
     .gallery-three {
         width: 120%;
-        height: auto;
+        
         z-index: 2
     }
 
     .gallery-four {
         width: 100%;
-        height: auto;
+        
         z-index: 2
     }
 
     .gallery-five {
         width: 80%;
-        height: auto;
+        
         z-index: 2;
     }
 
@@ -2223,19 +2197,9 @@ label:has(input[type="radio"]:checked) {
         right: 15%;
     }
 
-    .subscription-left h2 {
-        margin-top: 0px;
-    }
-
     .subscription-right p {
         padding: 0px;
     }
-
-    .subscription-right h2 {
-        margin-top: 0px;
-    }
-
-
 
     .section-three-title {
         max-width: 50%;
@@ -2315,7 +2279,7 @@ label:has(input[type="radio"]:checked) {
 
     .product-image {
         width: 100%;
-        height: auto;
+        
     }
 
     .product-box figcaption {
@@ -2344,13 +2308,13 @@ label:has(input[type="radio"]:checked) {
 
     .product-hero img {
         width: 60%;
-        height: auto;
+        
     }
 
     .mobile-product-lines img {
         display:block;
         width: 100%;
-        height: auto;
+        
     }
 
     .product-hero p {
@@ -2380,7 +2344,7 @@ label:has(input[type="radio"]:checked) {
     .pick {
         background-color: var(--teal);
         width: 80%;
-        height: auto;
+        
         margin: 0 auto;
         border-radius: 15px;
         padding: 10px;
@@ -2410,11 +2374,6 @@ label:has(input[type="radio"]:checked) {
 
     .quantity-pick h3 {
         flex-direction: column;
-    }
-
-    .recommended-gallery H2 {
-        margin-bottom: 0px;
-
     }
 
     .recommended-gallery a {
@@ -2456,9 +2415,6 @@ label:has(input[type="radio"]:checked) {
         background-color: var(--pink);
     }
 
-    .empty-cart {
-    }
-
     .cart-page-header {
         padding-bottom: 0px;
     }
@@ -2492,7 +2448,7 @@ label:has(input[type="radio"]:checked) {
 
     .cart-row-info {
         width: 80%;
-        height: auto;
+        
     }
 
 
@@ -2511,7 +2467,7 @@ label:has(input[type="radio"]:checked) {
 
     .cart-trash {
         width: 50%;
-        height: auto;
+        
     }
 
     .cart-row-info h2 {
@@ -2675,5 +2631,5 @@ label:has(input[type="radio"]:checked) {
     .mobile-menu-bottom p {
         font-family: Hubot Sans;
         color: var(--teal);
-    };
+    }
 }
