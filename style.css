@@ -1700,10 +1700,6 @@ label:has(input[type="radio"]:checked) {
     font-size: 2rem;
 }
 
-.summary-section {
-    display: flex;
-    flex-direction: column;
-}
 
 .checkout-row {
     background-color: var(--pink);
@@ -1794,6 +1790,31 @@ label:has(input[type="radio"]:checked) {
     height: auto;
 }
 
+.purchase-section {
+    display: flex;
+    flex-direction: column;
+}
+
+.purchase-info {
+    display: flex;
+    margin-top: 20px;
+}
+
+.purchase-left {
+    font-family: Hubot Sans;
+    font-size: clamp(0.8rem, 1.2vw, 1.2rem);
+}
+
+.purchase-right {
+    font-family: Hubot Sans;
+    font-size: clamp(0.8rem, 1.2vw, 1.2rem);
+    align-items: center;
+    margin-left: auto;
+}
+
+.purchase-info h3 {
+    margin-top: 10px;
+}
 
 .purchase-section a {
     font-family: Notable;

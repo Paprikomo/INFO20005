@@ -414,6 +414,7 @@ if (summaryContainer) {
 
 function renderSummary() {
     const cartItems = getCart();
+    let total = 0;
 
     if (cartItems.length === 0) {
         summaryContainer.innerHTML = `
@@ -424,6 +425,8 @@ function renderSummary() {
     }  
                    
     summaryContainer.innerHTML = cartItems.map(item => {
+        
+        total += item.price * item.quantity;
 
         return `
             <div class="summary-row">
@@ -451,9 +454,28 @@ function renderSummary() {
         `
     }).join("");
 
-    //summaryContainer.innerHTML += `
-        //<a href="purchase.html">PURCHASE</a>
-    //`
+    summaryContainer.innerHTML += `
+        <div class="purchase-section">
+            <div class="purchase-info">
+                <div class="purchase-left">
+                    <p>Subtotal</p>
+                    <p>Tax</p>
+                    <p>Shipping</p>
+                    <h3>TOTAL</h3>
+                </div>
+
+                <div class="purchase-right">
+                    <p>$${total.toFixed(2)}</p>
+                    <p>$0.00</p>
+                    <p>$8.95</p>
+                    <h3>$${(total + 8.95).toFixed(2)}</h3>
+                </div>
+            </div>
+        
+            <a href="purchase.html">PURCHASE</a>
+
+        </div>
+    `
 
     
     summaryContainer.querySelectorAll(".summary-remove").forEach(btn => {
